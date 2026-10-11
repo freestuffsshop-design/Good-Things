@@ -1,0 +1,20 @@
+# Open Heart Gifts - deployment settings
+# Run:  npx wrangler deploy
+# Dev:  npx wrangler dev
+
+name = "open-heart-gifts"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+# Uploads index.html and the assets folder as the static site.
+[assets]
+directory = "."
+binding = "ASSETS"
+
+# KV namespace that stores every entry.
+# Create it once with:
+#   npx wrangler kv namespace create LOGGED
+# then replace the id below with the one wrangler prints.
+[[kv_namespaces]]
+binding = "LOGGED"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
